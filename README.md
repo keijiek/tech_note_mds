@@ -23,3 +23,7 @@
 ## git
 
 - [git メモ(古い)](./git_note/gitMemo.md)
+
+## tailwind
+
+- [vite + tailwindcss + ペライチhtml](./tailwind/vite_tailwind_html.md)
