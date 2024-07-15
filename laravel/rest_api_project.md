@@ -101,23 +101,6 @@ php artisan migrate
 
 ---
 
-### git
-
-あとでもよい。
-github にリモートリポジトリを作成し、プロジェクト内で次を実行。
-
-```bash
-# bash
-git init
-git add -A
-git commit -m "first commit"
-git branch -M main
-git remote add origin git@github.com:your_github_user_name/name_of_repository_created.git
-git push -u origin main
-```
-
----
-
 ## 必要なものをインストール
 
 ### Fortify
