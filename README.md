@@ -4,6 +4,13 @@
 
 ---
 
+## git
+
+- [コマンドラインから .gitignore を自動生成 (gitignore.io)](./git_note/create_gitignore_with_gitignoreio.md)
+- [git メモ(古い)](./git_note/gitMemo.md)
+
+---
+
 ## Linux
 
 - [コマンド](./linux/commands.md)
@@ -16,14 +23,12 @@
 
 ---
 
-## WordPress
-
----
-
-## git
-
-- [git メモ(古い)](./git_note/gitMemo.md)
-
 ## tailwind
 
 - [vite + tailwindcss + ペライチhtml](./tailwind/vite_tailwind_html.md)
+
+---
+
+## WordPress
+
+---
