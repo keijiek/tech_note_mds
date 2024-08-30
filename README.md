@@ -2,6 +2,12 @@
 
 技術関連のノートです。
 
+最新版に更新したいときは、次のコマンドを打ってください。要 git
+
+```bash
+git pull
+```
+
 ---
 
 ## git
@@ -19,6 +25,7 @@
 
 ## Laravel
 
+- [CRUD ウェブアプリ作成](./laravel/create_crud_api.md)
 - [Rest API の作り方](./laravel/rest_api_project.md)
 
 ---
