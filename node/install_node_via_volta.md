@@ -5,11 +5,11 @@ updated_at : 2024-08-30
 Node は、バージョン管理ツールを使ってインストールする。  
 バージョン管理ツールとして `volta` を使う例を書き残す。
 
-## Volta を導入
+## 1. Volta を導入
 
 [Volta 公式](https://volta.sh/)を参照。
 
-### Linux / macOS
+### 1.1. Linux / macOS にインストール
 
 下記コマンドでインストール。アップグレードも兼ねる。  
 変更される可能性もあるので、[Volta 公式サイト](https://volta.sh/)のインストールコマンドを確認すること
@@ -34,9 +34,11 @@ which volta
 
 ---
 
-### Windows
+### 1.2. Windowsにインストール
 
-Windows 版もある。[Volta 公式サイト](https://volta.sh/) で推奨されている `winget` によるインストール方法を示す。
+※ この方法を採るよりも、`WSL`(**W**indows **S**ubsystem for **L**inux) を導入して `ubuntu` の動作環境を手に入れ、前述した方法を採ることをおすすめする。js や php などに関する情報を検索するとき、Unix (Linux/macOS)を前提とした情報が圧倒的多数。WSLの導入方法は「[WSL を使用して Windows に Linux をインストールする方法 (マイクロソフト)](https://learn.microsoft.com/ja-jp/windows/wsl/install)」に詳述されている。
+
+Windows 版もある。[Volta 公式サイト](https://volta.sh/) でも紹介されている `winget` によるインストール方法を示す。  
 
 ```bash
 # インストール
@@ -57,35 +59,38 @@ gcm volta | fl
 
 ---
 
-## volta で node をインストール
+## 2. volta で node をインストール
 
-LTS(長期サポート)の最新バージョンをインストールするには次のコマンド  
-たいていこれでよい。
+LTS(長期サポート)の最新バージョンをインストールするには次のコマンド。  
+多くの場合、これだけ使っていればよい。
 
 ```bash
 volta install node
 ```
 
-バージョンを指定することもできる。
+バージョンを指定してインストールすることもできる。
 
 ```bash
 # メジャーバージョン指定(そのメジャーバージョンの最新版をインストール)
 volta install node@20
 
-# バージョン指定
+# バージョン指定(v20.17.0 を指定)
 volta install node@20.17.0
 ```
 
-確認
+インストール後の確認。
 
 ```bash
 node -v
+npm -v
 ```
 
-## node をアンインストール
+---
+
+## 3. node をアンインストール
 
 volta によってインストールされた node コマンドそのもののパスは `volta which node` でわかる。  
-なお、 `which node` (windiws なら `gcm node`)で出力されるのはシンボリックリンクのパスなので注意。
+なお、 `which node` (windiws なら `gcm node`)で出力されるのはリンクファイル(Windowsでいうところのショートカット)のパスなので注意。
 
 ```bash
 volta which node
