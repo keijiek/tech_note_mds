@@ -7,9 +7,6 @@ composer require laravel/breeze --dev
 # インストール
 php artisan breeze:install
 
-# ほんとか？
-php artisan breeze:install --package-manager=bun
-
 # 選択肢は、今回はすべてデフォルトで。
 # alpine + blade
 # darkmode : no
