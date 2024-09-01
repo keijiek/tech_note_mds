@@ -18,7 +18,7 @@ Node は、バージョン管理ツールを使ってインストールする。
 curl https://get.volta.sh | bash
 ```
 
-インストール後、volta へ PATH を通す設定が bashrc に追加されるので、次のコマンドで再読み込み。  
+インストール後、volta へ PATH を通す設定が `.bashrc` に追加されるので、次のコマンドで再読み込み。  
 インストール前(アップグレード前)の時点ですでにPATHが通っていた場合は不要。
 
 ```bash
@@ -36,9 +36,9 @@ which volta
 
 ### 1.2. Windowsにインストール
 
-※ この方法を採るよりも、`WSL`(**W**indows **S**ubsystem for **L**inux) を導入して `ubuntu` の動作環境を手に入れ、前述した方法を採ることをおすすめする。js や php などに関する情報を検索するとき、Unix (Linux/macOS)を前提とした情報が圧倒的多数。WSLの導入方法は「[WSL を使用して Windows に Linux をインストールする方法 (マイクロソフト)](https://learn.microsoft.com/ja-jp/windows/wsl/install)」に詳述されている。
+*※ この方法を採るよりも、マイクロソフト社が提供する `WSL`(***W***indows ***S***ubsystem for ***L***inux) を導入したうえで前述した Linux 用の方法を採ることをおすすめする。 js や php などウェブに関するプログラムの情報を検索すると、Unix系OS(Linux/macOS)を前提とした情報が圧倒的多数。Windows の powershell や cmd ではコマンドが違いすぎてやりにくい。`WSL`の導入方法は、マイクロソフトのドキュメント「[WSL を使用して Windows に Linux をインストールする方法](https://learn.microsoft.com/ja-jp/windows/wsl/install)」に詳しい。*
 
-Windows 版もある。[Volta 公式サイト](https://volta.sh/) でも紹介されている `winget` によるインストール方法を示す。  
+volta は Windows 版もある。[Volta 公式サイト](https://volta.sh/) でも紹介されている `winget` によるインストール方法を示す。`winget`は、少なくとも Windows11 なら最初から使える。  
 
 ```bash
 # インストール

@@ -35,10 +35,10 @@ sudo mysql -u root
 -- データベースの新規作成
 CREATE DATABASE new_db_name;
 
--- ユーザーの新規作成
+-- ユーザーの新規作成、(既存ユーザーを用いてもよい)
 CREATE USER 'new_user_name'@'localhost' IDENTIFIED BY 'new_password';
 
--- 上記で作ったデータベースに対する全権限を、上記で作ったユーザーに与える。
+-- 上記で作ったデータベースに対する全権限を、上記で作ったユーザー(又は既存ユーザー)に与える。
 GRANT ALL ON new_db_name.* TO new_user_name@localhost
 
 -- ポート番号の確認
@@ -176,7 +176,6 @@ laravel new hoge_project
 
 ## 3. .env の編集
 
-
 ```bash
 APP_TIMEZONE=UTC
 # ↓
@@ -190,3 +189,61 @@ APP_FAKER_LOCALE=en_US
 # ↓
 APP_FAKER_LOCALE=ja_JP
 ```
+
+データベースの設定箇所を探して、控えておいたデータを書く。
+
+```bash
+DB_CONNECTION=sqlite
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_DATABASE=laravel
+# DB_USERNAME=root
+# DB_PASSWORD=
+
+# ↓ コメントインしてデータを入力
+
+DB_CONNECTION=mysql # sqlite から変更
+DB_HOST=127.0.0.1
+DB_PORT=3306 # ポート番号。mariadb の場合大抵は3306
+DB_DATABASE=new_db_name # 新しいデータベースの名前(空のデータベースであること)
+DB_USERNAME=new_user_name # 上記データベースについて全権限を持つユーザー名
+DB_PASSWORD=new_password # そのユーザーのパスワード
+```
+
+下記コマンドを実行し、laravel にデータベースを初期化させ、既存の migration ファイル群をもとにテーブルを編集させる。
+
+```bash
+php artisan migrate
+```
+
+※ここでエラーがでる場合、エラーメッセージをよく読んで欲しいが、多くの場合、.env の設定が間違っているか、空っぽではないデータベースを紐づけたか。
+
+---
+
+## 4. 認証用に breeze 導入
+
+```bash
+# breeze のインストーラのようなものを導入
+composer require laravel/breeze --dev
+
+# インストール
+php artisan breeze:install
+
+# いちおう打っておく。
+php artisan migrate
+npm i
+```
+
+```bash
+# フロント側のリソースを持たせるライブサーバーを起動
+bun run dev
+
+# laravel アプリが動くサーバーを起動
+php artisan serve
+```
+
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/) をブラウザで見て、アカウント作成とログインを試す。
+
+---
+
+## 5. ルーティング

@@ -18,10 +18,10 @@
 ---
 
 ## Laravel
-
+- [laravel インストーラーのインストール](./laravel/laravel_installer.md)
 - [CRUD ウェブアプリ作成](./laravel/create_crud_api.md)
 - [Rest API の作り方](./laravel/rest_api_project.md)
-
+- [Laravel 11 のインストール](./laravel_installation/index.md)
 ---
 
 ## Node
